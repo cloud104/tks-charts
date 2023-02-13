@@ -12,13 +12,3 @@ entries:
     urls:
     - https://cloud104.github.io/tks-charts/integracao-cloudwatch-0.1.0.tgz
     version: 0.1.0
-  node-local-dns:
-  - apiVersion: v2
-    appVersion: 1.22.13
-    description: A chart to install node-local-dns on Kubernetes cluster
-    icon: https://raw.githubusercontent.com/cloud104/tks/master/docs/logo.png?token=GHSAT0AAAAAABVDCS2RCKYILIQWKXO6T6J2Y6G5NUQ
-    name: node-local-dns
-    type: application
-    urls:
-    - https://cloud104.github.io/tks-charts/node-local-dns-0.0.1.tgz
-    version: 0.0.1
