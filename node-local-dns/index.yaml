@@ -17,6 +17,6 @@ entries:
     name: node-local-dns
     type: application
     urls:
-    - https://cloud104.github.io/tks-charts/
+    - https://cloud104.github.io/tks-charts/node-local-dns-0.0.1.tgz
     version: 0.0.1
 generated: "2023-02-13T16:47:30.709609671-03:00"
