@@ -16,7 +16,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 plugins:
-  log: false
+  log: true
 
 serviceAccount:
   # Specifies whether a service account should be created.
