@@ -3,20 +3,12 @@ entries:
   node-local-dns:
   - apiVersion: v2
     appVersion: 1.22.13
-    description: |
-    A chart to install node-local-dns on Kubernetes cluster.
-
-    NodeLocal DNSCache improves Cluster DNS performance by running a DNS caching agent on cluster nodes as a DaemonSet.
-
-    In today's architecture, Pods in 'ClusterFirst' DNS mode reach out to a kube-dns serviceIP for DNS queries. This is translated to a kube-dns/CoreDNS endpoint via iptables rules added by kube-proxy. With this new architecture, Pods will reach out to the DNS caching agent running on the same node, thereby avoiding iptables DNAT rules and connection tracking. The local caching agent will query kube-dns service for cache misses of cluster hostnames ("cluster.local" suffix by default).
-
-    Further documentation is [here](https://kubernetes.io/docs/tasks/administer-cluster/nodelocaldns/)
-
-    This helm chart works for both kube-proxy setups (iptables or ipvs).
+    created: "0001-01-01T00:00:00Z"
+    description: A chart to install node-local-dns on Kubernetes cluster.
     icon: https://raw.githubusercontent.com/cloud104/tks/master/docs/logo.png?token=GHSAT0AAAAAABVDCS2RCKYILIQWKXO6T6J2Y6G5NUQ
     name: node-local-dns
     type: application
     urls:
     - https://cloud104.github.io/tks-charts/node-local-dns-0.0.1.tgz
     version: 0.0.1
-generated: "2023-02-13T16:47:30.709609671-03:00"
+generated: "2023-02-13T17:58:54.817174599-03:00"
