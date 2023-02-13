@@ -12,7 +12,6 @@ entries:
     urls:
     - https://cloud104.github.io/tks-charts/integracao-cloudwatch-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-17T15:03:21.832229242-03:00"
   node-local-dns:
   - apiVersion: v2
     appVersion: 1.22.13
