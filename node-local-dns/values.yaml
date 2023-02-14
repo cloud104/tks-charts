@@ -1,6 +1,5 @@
 image:
   repository: registry.k8s.io/dns/k8s-dns-node-cache
-  # Overrides the image tag whose default is the chart appVersion.
   tag: "1.22.13"
 
 # Internal k8s internal domain
