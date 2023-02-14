@@ -49,13 +49,11 @@ spec:
         args: [ "-localip", "{{ .Values.pillar_local_dns }},{{ .Values.pillar_dns_server }}", "-conf", "/etc/Corefile", "-upstreamsvc", "{{ include "node-local-dns.fullname" . }}-upstream" ]
         securityContext:
           privileged: true
-        {{- if .Values.nodelocaldns_bind_metrics_host_ip }}
         env:
           - name: MY_HOST_IP
             valueFrom:
               fieldRef:
                 fieldPath: status.hostIP
-        {{- end }}
         ports:
         - containerPort: 53
           name: dns
