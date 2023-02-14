@@ -15,7 +15,7 @@ pillar_local_dns: "169.254.30.10"
 nameOverride: ""
 fullnameOverride: ""
 
-nodelocaldns_bind_metrics_host_ip: true
+#nodelocaldns_bind_metrics_host_ip: true
 
 plugins:
   log: true
