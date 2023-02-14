@@ -18,7 +18,7 @@ fullnameOverride: ""
 #nodelocaldns_bind_metrics_host_ip: true
 
 plugins:
-  log: true
+  log: false
 
 serviceAccount:
   # Specifies whether a service account should be created.
