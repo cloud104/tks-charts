@@ -15,6 +15,7 @@ entries:
   node-local-dns:
   - apiVersion: v2
     appVersion: 1.22.13
+    created: "0001-01-01T00:00:00Z"
     description: A Helm chart for install Node loca dns in Kubernetes Cluster.
     digest: bdfe8191acacb00ad5edd64894dba70d74203935da48f4dfabd00a87235e73f8
     icon: https://raw.githubusercontent.com/cloud104/tks/master/docs/logo.png?token=GHSAT0AAAAAABVDCS2RCKYILIQWKXO6T6J2Y6G5NUQ
@@ -23,4 +24,4 @@ entries:
     urls:
     - https://cloud104.github.io/tks-charts/node-local-dns-0.1.0.tgz
     version: 0.1.0
-
+generated: "2023-02-14T18:44:39.338278763-03:00"
