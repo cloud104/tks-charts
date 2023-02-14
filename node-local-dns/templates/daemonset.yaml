@@ -17,7 +17,7 @@ spec:
       labels:
         k8s-app: {{ include "node-local-dns.name" . }}
       annotations:
-        prometheus.io/port: "9353"
+        prometheus.io/port: "9253"
         prometheus.io/scrape: "true"
         {{- if .Values.podAnnotations }}
           {{- toYaml .Values.podAnnotations | nindent 8 }}
@@ -61,7 +61,7 @@ spec:
         - containerPort: 53
           name: dns-tcp
           protocol: TCP
-        - containerPort: 9353
+        - containerPort: 9253
           name: http-metrics
           protocol: TCP
         livenessProbe:
