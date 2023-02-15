@@ -10,7 +10,7 @@ pillar_dns_server: "10.96.0.10"
 pillar_local_dns: "169.254.30.10"
 
 serviceMonitor:
-  enabled: "true"
+  enabled: true
 
 nameOverride: ""
 fullnameOverride: ""
