@@ -7,14 +7,13 @@ pillar_dns_domain: "cluster.local"
 
 # Main coredns service (kube-dns) ip, used on iptables-mode.
 pillar_dns_server: "10.96.0.10"
-
-# Virtual IP to be used by ipvs mode, to be used as --cluster-dns, must not collide.
 pillar_local_dns: "169.254.30.10"
+
+serviceMonitor:
+  enabled: "true"
 
 nameOverride: ""
 fullnameOverride: ""
-
-#nodelocaldns_bind_metrics_host_ip: true
 
 plugins:
   log: false
@@ -34,6 +33,8 @@ resources:
   requests:
     cpu: 25m
     memory: 30Mi
-  limits: {}
+  limits: 
+    cpu: 40m
+    memory: 50Mi
 
 affinity: {}

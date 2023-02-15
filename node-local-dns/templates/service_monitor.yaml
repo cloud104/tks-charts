@@ -1,0 +1,21 @@
+{{- if .Values.serviceMonitor.enabled -}}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: prometheus-tks-{{ include "node-local-dns.fullname" . }}
+  namespace: tks-system
+  labels:
+    {{- include "node-local-dns.labels" . | nindent 4 }}
+  annotations:
+    prometheus.io/port: "9253"
+    prometheus.io/scrape: "true"
+spec:
+  endpoints:
+  - bearerTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token        
+    port: http-metrics     
+  namespaceSelector:
+    matchNames:
+    - kube-system
+  selector:
+    matchLabels:
+      k8s-app: {{ include "node-local-dns.fullname" . }}

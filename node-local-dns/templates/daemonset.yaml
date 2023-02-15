@@ -49,11 +49,6 @@ spec:
         args: [ "-localip", "{{ .Values.pillar_local_dns }},{{ .Values.pillar_dns_server }}", "-conf", "/etc/Corefile", "-upstreamsvc", "{{ include "node-local-dns.fullname" . }}-upstream" ]
         securityContext:
           privileged: true
-        env:
-          - name: MY_HOST_IP
-            valueFrom:
-              fieldRef:
-                fieldPath: status.hostIP
         ports:
         - containerPort: 53
           name: dns
