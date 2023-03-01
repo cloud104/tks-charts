@@ -1,0 +1,43 @@
+image:
+  repository: ghcr.io/amimof/node-cert-exporter
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+
+paths:
+  - /host/etc/kubernetes/pki/
+
+podAnnotations:
+  prometheus.io/scrape: 'true'
+  prometheus.io/port: '9117'
+
+tolerations:
+  - key: node.kubernetes.io/master
+    effect: NoSchedule
+
+nodeAffinity:
+  requiredDuringSchedulingIgnoredDuringExecution:
+    nodeSelectorTerms:
+    - matchExpressions:
+      - key: node-role.kubernetes.io/master
+        operator: Exists
+
+serviceAccount:
+  create: true
+
+service:
+  create: true
+
+serviceMonitor:
+  create: true
+
+prometheusRule:
+  create: true
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 70Mi
