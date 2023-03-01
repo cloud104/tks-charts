@@ -1,0 +1,24 @@
+{{- if .Values.serviceMonitor.create -}}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: node-cert-exporter
+  namespace: tks-system
+  {{- with .Values.podAnnotations }}
+  annotations:
+    {{- toYaml . | nindent 8 }}
+  {{- end }}
+  labels:
+    app: node-cert-exporter
+spec:
+  endpoints:
+  - interval: 20s
+    path: /metrics
+    port: http-metrics
+  namespaceSelector:
+    matchNames:
+    - tks-system
+  selector:
+    matchLabels:
+      app: node-cert-exporter
+{{- end }}

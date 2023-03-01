@@ -1,0 +1,30 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    prometheus: tks
+    role: alert-rules
+  name: node-cert-exporter.rules
+  namespace: tks-system
+spec:
+  groups:
+  - name: node-cert-exporter.rules
+    rules:
+    - alert: PkiCertificateExpiration
+      for: 30m
+      expr: min by (path) (ssl_certificate_expiry_seconds/ 86400) < 30
+      annotations:
+        description: 'PKI Certificate Kubernetes is going to expire in 30 days!'
+        summary: 'The cert {{`{{`}} $labels.path {{`}}`}} is expiring. The number of days to expire is {{`{{`}} $value | printf "%.2f" {{`}}`}} days.'
+      labels:
+        severity: warning
+        team: tks
+    - alert: PkiCertificateExpiration
+      for: 30m
+      expr: min by (path) (ssl_certificate_expiry_seconds/ 86400) < 7
+      annotations:
+        description: 'PKI Certificate Kubernetes is going to expire in 7 days!'
+        summary: 'The cert {{`{{`}} $labels.path {{`}}`}} is expiring. The number of days to expire is {{`{{`}} $value | printf "%.2f" {{`}}`}} days.'
+      labels:
+        severity: critical
+        team: tks

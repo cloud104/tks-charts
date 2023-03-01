@@ -24,4 +24,15 @@ entries:
     urls:
     - https://cloud104.github.io/tks-charts/node-local-dns-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-14T18:44:39.338278763-03:00"
+  node-cert-exporter:
+  - apiVersion: v2
+    appVersion: 1.1.2
+    description: A Helm chart for node-cert-exporter - An SSL certificate Prometheus exporter
+    digest: bdfe8191acacb00ad5edd64894dba70d74203935da48f4dfabd00a87235e73f8
+    icon: https://raw.githubusercontent.com/cloud104/tks/master/docs/logo.png?token=GHSAT0AAAAAABVDCS2RCKYILIQWKXO6T6J2Y6G5NUQ
+    name: node-cert-exporter
+    type: application
+    urls:
+    - https://cloud104.github.io/tks-charts/node-cert-exporter-0.0.1.tgz
+    version: 0.0.1  
+generated: "2023-03-01T15:25:47.977754736-03:00"

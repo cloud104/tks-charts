@@ -1,0 +1,19 @@
+{{- if .Values.service.create -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-cert-exporter-metrics
+  namespace: tks-system
+  {{- with .Values.podAnnotations }}
+  annotations:
+    {{- toYaml . | nindent 8 }}
+  {{- end }}
+  labels:
+    app: node-cert-exporter
+spec:
+  ports:
+    - name: http-metrics
+      port: 9117
+  selector:
+    app: node-cert-exporter
+{{- end }}
